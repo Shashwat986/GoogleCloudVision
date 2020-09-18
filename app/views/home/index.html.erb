@@ -1,0 +1,5 @@
+<%= form_with url: home_index_path do |image_form| %>
+  <%= image_form.file_field :image %>
+  <%= image_form.text_field :title %>
+  <%= submit_tag("Search") %>
+<% end %>
