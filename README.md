@@ -9,7 +9,9 @@ This is an attempt for me to use ActiveStorage, Google Cloud Vision APIs, and Ki
 ### Links
 
 1. https://cloud.google.com/vision/docs/labels
-
+1. https://googleapis.dev/ruby/google-cloud-vision-v1/latest/Google/Cloud/Vision/V1/ImageAnnotator/Client.html#label_detection-instance_method
+1. https://kivy.org/#home
+1. https://edgeguides.rubyonrails.org/active_storage_overview.html
 
 ### Process
 
