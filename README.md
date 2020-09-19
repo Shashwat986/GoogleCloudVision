@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Using Google's Vision API to detect items in an image.
 
-Things you may want to cover:
+### Idea
 
-* Ruby version
+Use these cloud vision APIs to automate the creation and validation of online scavenger hunts. Doesn't work as it stands right now, because the accuracy of the API is too low to be of any use.
 
-* System dependencies
+### Links
 
-* Configuration
+1. https://cloud.google.com/vision/docs/labels
 
-* Database creation
 
-* Database initialization
+### Process
 
-* How to run the test suite
+Detailed out in (https://cloud.google.com/vision/docs/quickstart-client-libraries):
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Go to https://console.cloud.google.com/home/dashboard
+1. Create a project
+1. Enable the "Cloud Vision API"
+1. Create a new "Service Account"
+1. Set the role to Project > Owner
+1. Download the JSON file with the credentials
+1. These credentials are read from the `ENV['GOOGLE_APPLICATION_CREDENTIALS']` defined in `.env.development`. Change that value
