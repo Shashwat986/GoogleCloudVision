@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_092706) do
   create_table "images", force: :cascade do |t|
     t.string "title"
     t.string "tags"
+    t.string "gcv_response"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

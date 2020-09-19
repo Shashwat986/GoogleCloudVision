@@ -1,2 +1,29 @@
-<%= @i.as_json %>
-<%= image_tag url_for(@i.image) %>
+<div class="columns">
+  <div class="column is-3 has-text-centered is-small">
+    <%= link_to "< Back", home_index_path %>
+  </div>
+</div>
+<div class="columns">
+  <div class="column is-3">
+    <%= image_tag url_for(@i.image) %>
+  </div>
+  <div class="column">
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <div class="title is-4"><%= @i.title %></div>
+      </div>
+      <% if @i.tags %>
+        <div class="column is-12">
+          <% @i.tags.each do |tag| %>
+            <div class="tag"><%= tag %></div>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="column is-12">
+        <pre>
+          <code><%= JSON.pretty_generate(@i.as_json) %></code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

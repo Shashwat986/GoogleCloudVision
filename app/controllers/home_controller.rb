@@ -3,9 +3,13 @@ class HomeController < ApplicationController
   end
 
   def create
-    @i = Image.create(params.permit(:image, :title))
+    params.require([:image, :title])
+    permitted = params.permit(:title, :image)
+    @i = Image.create! permitted
 
-    render 'show'
+    @i.process_tags
+
+    redirect_to action: :show, id: @i.id
   end
 
   def show

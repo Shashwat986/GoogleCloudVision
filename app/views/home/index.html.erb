@@ -1,5 +1,46 @@
-<%= form_with url: home_index_path do |image_form| %>
-  <%= image_form.file_field :image %>
-  <%= image_form.text_field :title %>
-  <%= submit_tag("Search") %>
+<%= form_with url: home_index_path, local: true do |image_form| %>
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <div class="file has-name">
+          <label class="file-label">
+            <%= image_form.file_field :image, accept: "image/*", class: "file-input" %>
+            <span class="file-cta">
+              Choose a file
+            </span>
+            <span class="file-name" id="preview-name">
+              No File Uploaded
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="label">Title</div>
+        <div class="control">
+          <%= image_form.text_field :title, class: "input" %>
+        </div>
+      </div>
+    </div>
+    <div class="column is-2">
+      <img id="preview" src="https://via.placeholder.com/480x320.png?text=Placeholder">
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <%= submit_tag "Submit", class: "button is-fullwidth is-primary" %>
+    </div>
+  </div>
 <% end %>
+
+
+
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementsByName('image')[0].onchange = function (evt) {
+      document.getElementById("preview").src = URL.createObjectURL(evt.target.files[0]);
+      document.getElementById("preview-name").innerHTML = evt.target.files[0].name;
+      console.log(evt.target.files[0])
+    };
+  });
+</script>
